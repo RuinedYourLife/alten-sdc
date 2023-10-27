@@ -14,8 +14,8 @@ export const PRODUCT_TABLE_CONF: CrudItemOptions[] = [
       minScreenSize: ScreenWidth.large,
       hidden: true
     },
-    controlOptions: {      
-      hideOnCreate: false,
+    controlOptions: {
+      hideOnCreate: true,
       hideOnUpdate: false,
       disableOnCreate: true,
       disableOnUpdate: true
@@ -68,7 +68,7 @@ export const PRODUCT_TABLE_CONF: CrudItemOptions[] = [
     controlType: ControlType.SELECT,
     label: 'inventoryStatus',
     options: [{value: "INSTOCK",label: "INSTOCK" },
-    {value:"LOWSTOCK",label: "LOWSTOCK" }, 
+    {value:"LOWSTOCK",label: "LOWSTOCK" },
     {value: "OUTOFSTOCK",label: "OUTOFSTOCK"}],
     columnOptions: {
       minScreenSize: ScreenWidth.small,
@@ -95,4 +95,4 @@ export const PRODUCT_TABLE_CONF: CrudItemOptions[] = [
     }
   }
 
-]; 
+];
