@@ -2,10 +2,18 @@ version: '3'
 services:
   app:
     build:
-      context: .
+      context: ./back
       dockerfile: dockerfile
     ports:
       - "3000:3000"
+  frontend:
+    build:
+      context: ./front
+      dockerfile: dockerfile
+    ports:
+      - "4200:4200"
+    depends_on:
+      - app
   mongo:
     image: mongo:latest
     ports:
