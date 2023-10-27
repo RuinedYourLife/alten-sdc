@@ -59,7 +59,7 @@ public class ProductController {
     if (product.getImage() != null) existingProduct.setImage(product.getImage());
     if (product.getRating() != 0) existingProduct.setRating(product.getRating());
 
-    return ResponseEntity.ok(productRepository.save(product));
+    return ResponseEntity.ok(productRepository.save(existingProduct));
   }
 
   @DeleteMapping("/{id}")
