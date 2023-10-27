@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>fr.ruined</groupId>
-	<artifactId>alten-sdc</artifactId>
+	<artifactId>altensdc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>alten-sdc</name>
+	<name>altensdc</name>
 	<description>Altend SDC technical test</description>
 	<properties>
 		<java.version>21</java.version>
