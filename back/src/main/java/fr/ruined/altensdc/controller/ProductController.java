@@ -18,7 +18,7 @@ import fr.ruined.altensdc.model.Product;
 import fr.ruined.altensdc.repository.ProductRepository;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/api/product")
 public class ProductController {
   
   @Autowired
