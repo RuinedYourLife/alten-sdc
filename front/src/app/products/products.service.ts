@@ -17,13 +17,13 @@ export class ProductsService {
         return this.http.get<Product[]>(this.BASE_URL);
     }
 
-    create(prod: Product): Observable<Product> {
-        return this.http.post<Product>(this.BASE_URL, prod);
+    create(product: Product): Observable<Product> {
+        return this.http.post<Product>(this.BASE_URL, product);
     }
 
-    update(prod: Product): Observable<Product>{
-        const updateUrl = `${this.BASE_URL}/${prod.id}`;
-        return this.http.patch<Product>(updateUrl, prod);
+    update(product: Product): Observable<Product>{
+        const updateUrl = `${this.BASE_URL}/${product.id}`;
+        return this.http.patch<Product>(updateUrl, product);
     }
 
     delete(id: number): Observable<void>{
