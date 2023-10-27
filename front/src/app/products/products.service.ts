@@ -8,7 +8,6 @@ import { environment } from 'environments/environment';
   providedIn: 'root'
 })
 export class ProductsService {
-
     private BASE_URL = environment.apiUrl + '/product';
 
     constructor(private http: HttpClient) { }
@@ -18,6 +17,7 @@ export class ProductsService {
     }
 
     create(product: Product): Observable<Product> {
+        if (!product.id) delete product.id;
         return this.http.post<Product>(this.BASE_URL, product);
     }
 
