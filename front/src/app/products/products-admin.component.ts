@@ -3,7 +3,7 @@ import { Product, ProductPayload } from './product.class';
 import {PRODUCT_TABLE_CONF} from './products-admin-table.conf';
 import { ProductsService } from './products.service';
 
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 import { BaseTableLoader } from 'app/shared/ui/table/base-table-loader.class';
 
@@ -29,11 +29,19 @@ export class ProductsAdminComponent extends BaseTableLoader implements OnInit {
   ngOnInit(): void {
 
     // Display data table
-    this.productsService.getProducts().subscribe(products => 
+    this.productsService.getProducts().subscribe(products =>
     {
       this.payload$.next({products: products, total: products.length})
     });
 
+  }
+
+  public handleReload(httpCall$: Observable<unknown>) {
+    httpCall$.subscribe(() => {
+        this.productsService.getProducts().subscribe(products => {
+            this.payload$.next({ products: products, total: products.length })
+        });
+    });
   }
 
   public onDeleteProduct(ids: number[]): void {
